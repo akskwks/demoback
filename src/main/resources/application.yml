@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/demo
-    username: demo
-    password: demo
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://34.71.220.5:3306/demo?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://34.9.116.242:3306/demo?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+
 
   jpa:
     hibernate:
