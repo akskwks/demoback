@@ -17,7 +17,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/boards")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://34.9.116.242:3000")
 public class BoardController {
 
     @Autowired
