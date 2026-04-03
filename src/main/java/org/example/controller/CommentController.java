@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/comments")
+@RequestMapping("/api/boards/{boardId}/comments")
 @RequiredArgsConstructor
 @CrossOrigin
 public class CommentController {
@@ -17,7 +17,7 @@ public class CommentController {
     @Autowired
     private final CommentService commentService;
 
-    @PostMapping("/{boardId}")
+    @PostMapping
     public Comment create(
             @PathVariable Long boardId,
             @RequestBody Comment request) {
@@ -29,7 +29,7 @@ public class CommentController {
         );
     }
 
-    @GetMapping("/{boardId}")
+    @GetMapping
     public List<Comment> get(@PathVariable Long boardId) {
         return commentService.findByBoard(boardId);
     }
