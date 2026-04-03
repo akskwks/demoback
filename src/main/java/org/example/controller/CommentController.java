@@ -19,24 +19,24 @@ public class CommentController {
 
     @PostMapping("/{boardId}")
     public Comment create(
-            @PathVariable Long id,
+            @PathVariable Long boardId,
             @RequestBody Comment request) {
 
         return commentService.save(
-                id,
+                boardId,
                 request.getContent(),
                 request.getWriter()
         );
     }
 
-    @GetMapping("/{id}")
-    public List<Comment> get(@PathVariable Long id) {
-        return commentService.findByBoard(id);
+    @GetMapping("/{boardId}")
+    public List<Comment> get(@PathVariable Long boardId) {
+        return commentService.findByBoard(boardId);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        commentService.delete(id);
+    @DeleteMapping("/{commentId}")
+    public void delete(@PathVariable Long commentId) {
+        commentService.delete(commentId);
     }
 
 }
